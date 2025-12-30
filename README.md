@@ -40,3 +40,55 @@ A modern, full-featured **ASP.NET Core MVC** web application built with **.NET 8
    ```bash
    git clone https://github.com/yourusername/CSproject.git
    cd CSproject
+<p>Set up MySQL Database
+Start XAMPP and run MySQL
+Open phpMyAdmin (http://localhost/phpmyadmin)
+Create a new database named BloodDonation
+Run the following SQL script to create tables and seed initial data:</p>
+USE BloodDonation;
+
+CREATE TABLE BloodGroups (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(5) NOT NULL UNIQUE
+);
+
+CREATE TABLE Users (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL UNIQUE,
+    PasswordHash VARCHAR(255) NOT NULL,
+    Role VARCHAR(20) NOT NULL,
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Phone VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Donors (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    UserId INT NOT NULL,
+    BloodGroupId INT NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    LastDonationDate DATE NULL,
+    AvailabilityStatus TINYINT(1) DEFAULT 1,
+    IsApproved TINYINT(1) DEFAULT 1,
+    WhatsApp VARCHAR(50) NULL,
+    Facebook VARCHAR(255) NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(Id) ON DELETE CASCADE,
+    FOREIGN KEY (BloodGroupId) REFERENCES BloodGroups(Id)
+);
+
+CREATE TABLE SearchLogs (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    UserId INT NOT NULL,
+    BloodGroupId INT NOT NULL,
+    SearchDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserId) REFERENCES Users(Id) ON DELETE CASCADE,
+    FOREIGN KEY (BloodGroupId) REFERENCES BloodGroups(Id)
+);
+
+-- Seed blood groups
+INSERT INTO BloodGroups (Name) VALUES 
+('A+'), ('A-'), ('B+'), ('B-'), ('AB+'), ('AB-'), ('O+'), ('O-');
+
+-- Admin user (username: admin, password: admin123)
+INSERT INTO Users (Username, PasswordHash, Role, Name, Email, Phone) 
+VALUES ('admin', 'JAvlGPq9JyTdtvBO6x2llnRI1+gxwIyPqCKAn3THIKk=', 'Admin', 'Administrator', 'admin@example.com', '9999999999');
