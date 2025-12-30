@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Patient Search Logs";
+    var logList = ViewBag.SearchLogList as List<dynamic> ?? new List<dynamic>();
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5 text-danger fw-bold">Patient Search History</h1>
+
+    @if (!logList.Any())
+    {
+        <div class="alert alert-info text-center">
+            <h4>No search logs yet.</h4>
+            <p>Logs will appear here when patients search for donors.</p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-hover shadow">
+                <thead class="table-primary">
+                    <tr>
+                        <th>#</th>
+                        <th>Patient Name</th>
+                        <th>Blood Group Needed</th>
+                        <th>Search Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int index = 1; }
+                    @foreach (var item in logList)
+                    {
+                        var log = item.Log;
+                        var user = item.User;
+                        var bg = item.BloodGroup;
+
+                        <tr>
+                            <td>@index</td>
+                            <td><strong>@user.Name</strong></td>
+                            <td><span class="badge bg-danger">@bg.Name</span></td>
+                            <td>@log.SearchDate.ToString("dd MMM yyyy - hh:mm tt")</td>
+                        </tr>
+                        index++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    <div class="text-center mt-5">
+        <a href="/Admin/Dashboard" class="btn btn-secondary btn-lg px-5">Back to Dashboard</a>
+    </div>
+</div>

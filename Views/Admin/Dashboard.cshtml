@@ -1,0 +1,122 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container-fluid mt-5 mb-5 px-4">
+    <!-- Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-white mb-3 text-shadow">Admin Dashboard</h1>
+        
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row g-4 mb-5">
+        <div class="col-lg-6">
+            <div class="card bg-gradient-red text-white shadow-lg border-0 rounded-4 p-5 text-center hover-glow">
+                <div class="display-1 mb-4 opacity-80">Registered Donors</div>
+                <h2 class="display-2 fw-bold mb-3">@ViewBag.TotalDonors</h2>
+                
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card bg-gradient-blue text-white shadow-lg border-0 rounded-4 p-5 text-center hover-glow">
+                <div class="display-1 mb-4 opacity-80">Registered Patients</div>
+                <h2 class="display-2 fw-bold mb-3">@ViewBag.TotalPatients</h2>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Blood Group Distribution -->
+    <div class="card bg-dark text-white shadow-lg border-0 rounded-4 overflow-hidden">
+        <div class="card-header bg-gradient-red text-white text-center py-4 border-0">
+            <h3 class="display-6 mb-0">Blood Group Distribution</h3>
+            <p class="mb-0 opacity-80">Among all registered donors</p>
+        </div>
+        <div class="card-body p-5">
+            @if (ViewBag.TotalDonors == 0)
+            {
+                <div class="text-center py-5">
+                    <p class="fs-3 text-light opacity-70">No donors registered yet</p>
+                    <div class="display-1 opacity-30">Waiting</div>
+                </div>
+            }
+            else
+            {
+                <div class="row g-4">
+                    @foreach (var stat in ViewBag.BloodStats)
+                    {
+                        double percentage = Math.Round((double)stat.Count / ViewBag.TotalDonorsForPercentage * 100, 1);
+                        <div class="col-md-6 col-lg-4">
+                            <div class="bg-glass text-white p-4 rounded-4 text-center hover-glow">
+                                <div class="badge bg-danger fs-2 px-4 py-3 mb-3 rounded-pill shadow">
+                                    @stat.BloodGroup
+                                </div>
+                                <h4 class="fw-bold fs-3 mb-2">@stat.Count Donor@(stat.Count == 1 ? "" : "s")</h4>
+                                <div class="progress mt-4" style="height: 40px; background: rgba(255,255,255,0.1);">
+                                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" 
+                                         style="width: @percentage%">
+                                        <span class="fw-bold fs-4">@percentage%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+
+   
+</div>
+
+<style>
+    body {
+        background: #121212;
+        color: #e0e0e0;
+    }
+
+    .bg-gradient-red {
+        background: linear-gradient(135deg, #dc3545, #ff4444);
+    }
+
+    .bg-gradient-blue {
+        background: linear-gradient(135deg, #343a40, #495057);
+    }
+
+    .bg-glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .text-shadow {
+        text-shadow: 0 4px 8px rgba(0,0,0,0.6);
+    }
+
+    .hover-glow {
+        transition: all 0.4s ease;
+    }
+
+    .hover-glow:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(220, 53, 69, 0.4);
+    }
+
+    .progress-bar-animated {
+        animation: progress-stripes 3s linear infinite;
+    }
+
+    @@keyframes progress-stripes {
+        0% { background-position: 40px 0; }
+        100% { background-position: 0 0; }
+    }
+
+    .card {
+        transition: all 0.4s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+    }
+</style>

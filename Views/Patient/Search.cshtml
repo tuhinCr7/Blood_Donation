@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Search Donors";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Search Available Donors</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label>Blood Group</label>
+                            <select name="bloodGroupId" class="form-select" required>
+                                <option value="">-- Select --</option>
+                                @foreach (var bg in ViewBag.BloodGroups)
+                                {
+                                    <option value="@bg.Id">@bg.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

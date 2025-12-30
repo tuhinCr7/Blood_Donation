@@ -1,0 +1,97 @@
+@{
+    ViewData["Title"] = "Manage Donors";
+    var donorList = ViewBag.DonorList as List<dynamic> ?? new List<dynamic>();
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5 text-danger fw-bold">Manage Donors</h1>
+
+    @if (!donorList.Any())
+    {
+        <div class="alert alert-info text-center">
+            <h4>No donors registered yet.</h4>
+            <p>Donors will appear here after they register.</p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-hover shadow">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Blood Group</th>
+                        <th>Address</th>
+                        <th>Last Donation</th>
+                        <th>Available</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in donorList)
+                    {
+                        var donor = item.Donor;
+                        var user = item.User;
+                        var bg = item.BloodGroup;
+
+                        <tr>
+                            <td><strong>@user.Name</strong></td>
+                            <td>@user.Email</td>
+                            <td><a href="tel:@user.Phone">@user.Phone</a></td>
+                            <td><span class="badge bg-danger">@bg.Name</span></td>
+                            <td>@donor.Address</td>
+                            <td>
+                                @(donor.LastDonationDate.HasValue 
+                                    ? donor.LastDonationDate.Value.ToString("dd MMM yyyy") 
+                                    : "<em>Never</em>")
+                            </td>
+                            <td>
+                                @if (donor.AvailabilityStatus)
+                                {
+                                    <span class="text-success">Yes</span>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">No</span>
+                                }
+                            </td>
+                            <td>
+                                @if (donor.IsApproved)
+                                {
+                                    <span class="badge bg-success">Approved</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                }
+                            </td>
+                            <td>
+                                @if (!donor.IsApproved)
+                                {
+                                    <form method="post" asp-action="Approve" class="d-inline">
+                                        <input type="hidden" name="donorId" value="@donor.Id" />
+                                        <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form method="post" asp-action="Deactivate" class="d-inline">
+                                        <input type="hidden" name="donorId" value="@donor.Id" />
+                                        <button type="submit" class="btn btn-warning btn-sm">Deactivate</button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    <div class="text-center mt-5">
+        <a href="/Admin/Dashboard" class="btn btn-secondary btn-lg px-5">Back to Dashboard</a>
+    </div>
+</div>

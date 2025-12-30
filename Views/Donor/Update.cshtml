@@ -1,0 +1,134 @@
+@model CSproject.Models.Donor
+
+@{
+    ViewData["Title"] = "Update Donor Profile";
+}
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-7">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-gradient bg-primary text-white text-center py-5">
+                    <h2 class="mb-0">Update Your Profile</h2>
+                    <p class="lead mb-0">Keep your information current to help patients find you</p>
+                </div>
+
+                <div class="card-body p-5">
+                    @if (TempData["Success"] != null)
+                    {
+                        <div class="alert alert-success rounded-3">@TempData["Success"]</div>
+                    }
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger rounded-3">@TempData["Error"]</div>
+                    }
+
+                    <form method="post">
+                        <input type="hidden" name="id" value="@Model.Id" />
+
+                        <h5 class="mb-4 text-primary fw-bold">Personal Information</h5>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Full Name</label>
+                                <input type="text" name="User.Name" value="@Model.User.Name" class="form-control form-control-lg" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Email</label>
+                                <input type="email" name="User.Email" value="@Model.User.Email" class="form-control form-control-lg" required />
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <label class="form-label fw-bold">Phone Number</label>
+                            <input type="text" name="User.Phone" value="@Model.User.Phone" class="form-control form-control-lg" required />
+                        </div>
+
+                        <hr class="my-5" />
+
+                        <h5 class="mb-4 text-primary fw-bold">Donation Details</h5>
+
+                        <!-- FIXED: Blood Group dropdown - no C# in attributes -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Blood Group</label>
+                            <select name="BloodGroupId" class="form-select form-select-lg" required>
+                                <option value="">-- Select Blood Group --</option>
+                                @foreach (var bg in ViewBag.BloodGroups)
+                                {
+                                    if (bg.Id == Model.BloodGroupId)
+                                    {
+                                        <option value="@bg.Id" selected>@bg.Name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@bg.Id">@bg.Name</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Full Address</label>
+                            <textarea name="Address" class="form-control" rows="3" required>@Model.Address</textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Last Donation Date</label>
+                            <div class="input-group">
+                                <input type="date" name="LastDonationDate" class="form-control form-control-lg" 
+                                       value="@(Model.LastDonationDate?.ToString("yyyy-MM-dd"))" id="donationDate" />
+                                <span class="input-group-text">
+                                    <input type="checkbox" id="neverDonated" onchange="toggleDonationDate()" @(Model.LastDonationDate == null ? "checked" : "") />
+                                    <label class="form-check-label ms-2 fw-medium" for="neverDonated">Never donated</label>
+                                </span>
+                            </div>
+                            <small class="text-muted">If you have never donated, check the box above.</small>
+                        </div>
+
+                        <div class="form-check mb-5">
+                            <input type="checkbox" name="AvailabilityStatus" class="form-check-input" id="availability"
+                                   @(Model.AvailabilityStatus ? "checked" : "") />
+                            
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg px-5 rounded-pill shadow-lg hover-glow me-3">
+                                Save Changes
+                            </button>
+                            <a href="/Donor/Profile" class="btn btn-outline-secondary btn-lg px-5 rounded-pill">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDonationDate() {
+        const checkbox = document.getElementById('neverDonated');
+        const dateInput = document.getElementById('donationDate');
+
+        if (checkbox.checked) {
+            dateInput.value = '';
+            dateInput.disabled = true;
+        } else {
+            dateInput.disabled = false;
+        }
+    }
+
+    // Run on load to set correct state
+    window.onload = toggleDonationDate;
+</script>
+
+<style>
+    .bg-gradient {
+        background: linear-gradient(135deg, #007bff, #6610f2);
+    }
+    .hover-glow:hover {
+        box-shadow: 0 0 30px rgba(0,123,255,0.6);
+        transform: scale(1.03);
+        transition: all 0.3s ease;
+    }
+</style>

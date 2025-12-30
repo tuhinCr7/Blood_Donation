@@ -1,0 +1,209 @@
+﻿@{
+    ViewData["Title"] = "CSproject - Save Lives with Blood Donation";
+}
+
+<!-- Full-Screen Hero -->
+<section class="hero min-vh-100 d-flex align-items-center text-white position-relative overflow-hidden">
+    <div class="hero-bg"></div>
+    <div class="container position-relative z-3 text-center">
+        <h1 class="display-2 fw-bold mb-4 animate-fade-in">
+            Every Drop of Blood Can Save a Life
+        </h1>
+        <p class="lead fs-3 mb-5 animate-fade-in-delay">
+            Your one donation can save up to <strong class="text-warning">three lives</strong>.<br>
+            Be the reason someone gets to see tomorrow.
+        </p>
+
+        <div class="row justify-content-center g-5 animate-fade-in-delay-2">
+            <!-- Donor Card -->
+            <div class="col-lg-5 col-md-6">
+                <div class="card border-0 shadow-lg h-100 rounded-4 bg-white text-dark p-5 hover-lift">
+                    <div class="text-center mb-4">
+                        <div class="display-1 text-danger mb-3">Drop of Blood</div>
+                    </div>
+                    <h3 class="fw-bold mb-3 text-center">I Want to Donate Blood</h3>
+                    <p class="text-muted mb-4 text-center">
+                        Register as a donor and be available to help patients in need.
+                    </p>
+                    <div class="text-center">
+                        <a href="/Account/DonorRegister" class="btn btn-danger btn-lg w-100 rounded-pill shadow-lg hover-glow">
+                            Register as Donor
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patient Card -->
+            <div class="col-lg-5 col-md-6">
+                <div class="card border-0 shadow-lg h-100 rounded-4 bg-white text-dark p-5 hover-lift">
+                    <div class="text-center mb-4">
+                        <div class="display-1 text-primary mb-3">Search</div>
+                    </div>
+                    <h3 class="fw-bold mb-3 text-center">I Need Blood Urgently</h3>
+                    <p class="text-muted mb-4 text-center">
+                        Find available donors instantly during emergencies.
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="text-center">
+                        <a href="/Account/PatientRegister" class="btn btn-primary btn-lg w-100 rounded-pill shadow-lg hover-glow">
+                            Register as Patient
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Buttons - Now Very Clear -->
+        <div class="mt-5 text-center">
+            <p class="fs-4 mb-4 text-white fw-bold">Already registered?</p>
+            <a href="/Account/Login" class="btn btn-light btn-lg px-5 py-3 rounded-pill shadow-lg hover-glow me-4 fs-5 fw-bold">
+                Login Here
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Donate Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center display-5 fw-bold text-danger mb-5">Why Your Donation Matters</h2>
+        <div class="row g-5 text-center">
+            <div class="col-md-4">
+                <div class="p-4 hover-lift">
+                    <div class="icon-circle bg-danger text-white mb-4 mx-auto">
+                        <span class="fs-1">❤️</span>
+                    </div>
+                    <h4 class="fw-bold">Saves 3 Lives</h4>
+                    <p class="text-muted">One donation can help accident victims, surgery patients, and cancer fighters.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 hover-lift">
+                    <div class="icon-circle bg-danger text-white mb-4 mx-auto">
+                        <span class="fs-1">⏰</span>
+                    </div>
+                    <h4 class="fw-bold">Takes Only 1 Hour</h4>
+                    <p class="text-muted">The process is quick, safe, and you can donate every 4 months.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 hover-lift">
+                    <div class="icon-circle bg-danger text-white mb-4 mx-auto">
+                        <span class="fs-1">Safe</span>
+                    </div>
+                    <h4 class="fw-bold">100% Safe</h4>
+                    <p class="text-muted">New sterile equipment is used every time. No risk to your health.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Admin Login - Now Very Prominent -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4 display-5">Admin Portal</h2>
+        <p class="lead mb-5 fs-4">For system administrators</p>
+        <a href="/Account/Login" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill shadow-lg hover-glow fs-4 fw-bold">
+            Admin Login
+        </a>
+    </div>
+</section>
+
+<!-- Statistics -->
+<section class="py-5 bg-danger text-white">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-6 col-md-3">
+                <h2 class="display-4 fw-bold">1</h2>
+                <p class="fs-5">Donation = 3 Lives</p>
+            </div>
+            <div class="col-6 col-md-3">
+                <h2 class="display-4 fw-bold">4</h2>
+                <p class="fs-5">Months Between Donations</p>
+            </div>
+            <div class="col-6 col-md-3">
+                <h2 class="display-4 fw-bold">56</h2>
+                <p class="fs-5">Days Blood Can Be Stored</p>
+            </div>
+            <div class="col-6 col-md-3">
+                <h2 class="display-4 fw-bold">100%</h2>
+                <p class="fs-5">Safe Process</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        background: linear-gradient(rgba(220,53,69,0.9), rgba(200,35,51,0.9)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.3);
+    }
+
+    .z-3 {
+        z-index: 3;
+    }
+
+    .icon-circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .hover-lift {
+        transition: all 0.4s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    }
+
+    .hover-glow:hover {
+        box-shadow: 0 0 40px rgba(255,255,255,0.8);
+        transform: scale(1.05);
+    }
+
+    .animate-fade-in {
+        animation: fadeInUp 1.5s ease-out;
+    }
+
+    .animate-fade-in-delay {
+        animation: fadeInUp 1.5s ease-out 0.5s both;
+    }
+
+    .animate-fade-in-delay-2 {
+        animation: fadeInUp 1.5s ease-out 1s both;
+    }
+
+    @@keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @@media (max-width: 768px) {
+        .display-2 {
+            font-size: 2.8rem;
+        }
+        .lead {
+            font-size: 1.4rem;
+        }
+        .btn-lg {
+            font-size: 1.1rem;
+        }
+    }
+</style>

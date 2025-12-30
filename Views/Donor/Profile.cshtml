@@ -1,0 +1,83 @@
+@model CSproject.Models.Donor
+
+@{
+    ViewData["Title"] = "My Donor Profile";
+}
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-7">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                <!-- Header with gradient -->
+                <div class="card-header bg-gradient bg-success text-white text-center py-5 position-relative">
+                    <div class="position-absolute top-50 start-50 translate-middle opacity-10">
+                        <h1 class="display-1">❤️</h1>
+                    </div>
+                    <h2 class="mb-3 position-relative">My Donor Profile</h2>
+                    <p class="lead mb-0 position-relative">Thank you for being a lifesaver, @Model.User.Name</p>
+                </div>
+
+                <div class="card-body p-5">
+                    <div class="text-center mb-5">
+                        <div class="display-1 text-success mb-3">Thank You!</div>
+                        <p class="fs-4 text-muted">
+                            Your generosity can save up to <strong>three lives</strong> with one donation.
+                        </p>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="info-card p-4 rounded-4 bg-light">
+                                <h5 class="text-danger fw-bold mb-3">Personal Information</h5>
+                                <p><strong>Name:</strong> @Model.User.Name</p>
+                                <p><strong>Email:</strong> <a href="mailto:@Model.User.Email">@Model.User.Email</a></p>
+                                <p><strong>Phone:</strong> <a href="tel:@Model.User.Phone">@Model.User.Phone</a></p>
+                                <p><strong>Address:</strong> @Model.Address</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="info-card p-4 rounded-4 bg-light">
+                                <h5 class="text-danger fw-bold mb-3">Donation Details</h5>
+                                <p><strong>Blood Group:</strong> 
+                                    <span class="badge bg-danger fs-5 px-4 py-2">@Model.BloodGroup.Name</span>
+                                </p>
+                                <p><strong>Last Donation:</strong> 
+                                    <span class="fw-bold">
+                                        @(Model.LastDonationDate?.ToString("dd MMM yyyy") ?? "Never donated yet")
+                                    </span>
+                                </p>
+                              
+                             
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <a href="/Donor/Update" class="btn btn-primary btn-lg px-5 rounded-pill shadow-lg hover-glow me-3">
+                            Update Profile
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-gradient {
+        background: linear-gradient(135deg, #28a745, #20c997);
+    }
+    .info-card {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+    .info-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    .hover-glow:hover {
+        box-shadow: 0 0 30px rgba(0,123,255,0.6);
+    }
+</style>

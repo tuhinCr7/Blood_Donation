@@ -1,0 +1,80 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5 mb-5 min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="col-md-5 col-lg-4">
+        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+            <div class="card-header bg-white text-center py-5 border-0">
+                <div class="display-1 text-danger mb-4">🩸 Life Saves 🩸</div>
+                <h2 class="fw-bold text-dark">Welcome Back</h2>
+                <p class="text-muted fs-5">Login to continue saving lives</p>
+            </div>
+
+            <div class="card-body p-5">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger rounded-3 mb-4">@ViewBag.Error</div>
+                }
+
+                <form method="post">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Username</label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bg-light border-0">
+                                <i class="fs-4 text-danger">👤</i>
+                            </span>
+                            <input type="text" name="username" class="form-control" placeholder="Enter username" required autofocus />
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Password</label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bg-light border-0">
+                                <i class="fs-4 text-danger">🔒</i>
+                            </span>
+                            <input type="password" name="password" class="form-control" placeholder="Enter password" required />
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger btn-lg w-100 rounded-pill shadow-lg py-3 fw-bold hover-glow">
+                        Login
+                    </button>
+                </form>
+
+                <div class="text-center mt-4">
+                    <p class="text-muted">
+                        New here? 
+                        <a href="/Account/DonorRegister" class="text-danger fw-bold">Register as Donor</a> or 
+                        <a href="/Account/PatientRegister" class="text-primary fw-bold">Patient</a>
+                    </p>
+                    <p class="mt-3">
+                        <a href="/" class="text-muted">← Back to Home</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-glow:hover {
+        box-shadow: 0 0 40px rgba(220, 53, 69, 0.5);
+        transform: translateY(-5px);
+        transition: all 0.4s ease;
+    }
+
+    .form-control:focus {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    }
+
+    .card {
+        transition: all 0.4s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+</style>

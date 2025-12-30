@@ -1,0 +1,104 @@
+@model List<CSproject.Models.DonorViewModel>
+
+@{
+    ViewData["Title"] = "Available Blood Donors";
+}
+
+<div class="container mt-5 mb-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">🩸 Available Blood Donors</h1>
+        <p class="lead text-muted">Contact donors directly for urgent needs</p>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5">
+            <div class="display-1 text-muted mb-4">😔</div>
+            <h3 class="text-muted">No eligible donors found</h3>
+            <p class="fs-5 text-muted">Try searching for a different blood group or check again later.</p>
+            <a href="/Patient/Search" class="btn btn-primary btn-lg px-5 rounded-pill shadow hover-glow mt-4">
+                Search Again
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var donor in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-lg border-0 rounded-4 h-100 hover-lift">
+                        <div class="card-header bg-danger text-white text-center py-4">
+                            <h4 class="mb-0">@donor.Name</h4>
+                            <span class="badge bg-light text-danger fs-5 mt-2">@donor.BloodGroupName</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="mb-2"><strong>Phone:</strong> 
+                                <a href="tel:@donor.Phone" class="text-decoration-none">@donor.Phone</a>
+                            </p>
+                            <p class="mb-2"><strong>Email:</strong> 
+                                <a href="mailto:@donor.Email" class="text-decoration-none">@donor.Email</a>
+                            </p>
+                            <p class="mb-2"><strong>Address:</strong> @donor.Address</p>
+                            <p class="mb-3"><strong>Last Donation:</strong> 
+                                <span class="fw-bold">
+                                    @(donor.LastDonationDate?.ToString("dd MMM yyyy") ?? "Never donated")
+                                </span>
+                            </p>
+
+                            <div class="d-grid gap-2">
+                                @if (!string.IsNullOrEmpty(donor.WhatsApp))
+                                {
+                                    <a href="https://wa.me/@donor.WhatsApp.Replace("+", "")?text=Hello%20@donor.Name,%20I%20urgently%20need%20@donor.BloodGroupName%20blood.%20Can%20you%20help?" 
+                                       target="_blank" class="btn btn-success rounded-pill shadow-sm hover-glow">
+                                        📱 Message on WhatsApp
+                                    </a>
+                                }
+
+                                @if (!string.IsNullOrEmpty(donor.Facebook))
+                                {
+                                    string fbUrl = donor.Facebook.StartsWith("http") 
+                                        ? donor.Facebook 
+                                        : "https://www.facebook.com/" + donor.Facebook;
+
+                                    <a href="@fbUrl" target="_blank" class="btn btn-primary rounded-pill shadow-sm hover-glow">
+                                        📘 Message on Facebook
+                                    </a>
+                                }
+
+                                @if (string.IsNullOrEmpty(donor.WhatsApp) && string.IsNullOrEmpty(donor.Facebook))
+                                {
+                                    <p class="text-muted text-center mb-0">
+                                        <small>No social contact provided</small>
+                                    </p>
+                                }
+                            </div>
+                        </div>
+                        <div class="card-footer text-center bg-light border-0">
+                            <small class="text-success fw-bold">Eligible & Available to Donate</small>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="/Patient/Search" class="btn btn-outline-primary btn-lg px-5 rounded-pill shadow hover-glow">
+                New Search
+            </a>
+        </div>
+    }
+</div>
+
+<style>
+    .hover-lift {
+        transition: all 0.4s ease;
+    }
+    .hover-lift:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+    .hover-glow:hover {
+        box-shadow: 0 0 30px rgba(220, 53, 69, 0.4);
+    }
+</style>
