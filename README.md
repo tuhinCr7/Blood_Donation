@@ -22,7 +22,40 @@
 - Fully responsive & modern UI
 
 <br>
+### 📸 Project Screenshots
 
+<table>
+  <tr>
+    <td align="center">
+      <img src="search.png" alt="Patient Search Results with Contact Buttons" width="100%"/>
+      <br><strong>Patient Search Results (WhatsApp & Facebook Contact)</strong>
+    </td>
+    <td align="center">
+      <img src="register.png" alt="Donor Registration Form" width="100%"/>
+      <br><strong>Donor Registration (with Never Donated option)</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="dashboard.png" alt="Admin Dashboard" width="100%"/>
+      <br><strong>Admin Dashboard (Statistics & Blood Group Distribution)</strong>
+    </td>
+    <td align="center">
+      <img src="homepage.png" alt="Home / Landing Page" width="100%"/>
+      <br><strong>Home Page (Clean & Emotional Design)</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="login.png" alt="Login Page" width="100%"/>
+      <br><strong>Login Page</strong>
+    </td>
+    <td align="center">
+      <img src="profile.png" alt="Donor Profile" width="100%"/>
+      <br><strong>Donor Profile & Update</strong>
+    </td>
+  </tr>
+</table>
 
 <br>
 
