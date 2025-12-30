@@ -25,35 +25,27 @@
 
 ### 📸 Project Screenshots
 
+<### 📸 Project Screenshots
+
 <table>
   <tr>
     <td align="center">
-      <img src="images/search.png" alt="Patient Search Results with Contact Buttons" width="100%"/>
-      <br><strong>Patient Search Results (WhatsApp & Facebook Contact)</strong>
+      <img src="homepage.png" alt="Home Page" width="100%"/>
+      <br><strong>Home / Landing Page</strong>
     </td>
     <td align="center">
-      <img src="images/register.png" alt="Donor Registration Form" width="100%"/>
-      <br><strong>Donor Registration (with Never Donated option)</strong>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="images/dashboard.png" alt="Admin Dashboard" width="100%"/>
-      <br><strong>Admin Dashboard (Statistics & Blood Group Distribution)</strong>
-    </td>
-    <td align="center">
-      <img src="images/homepage.png" alt="Home / Landing Page" width="100%"/>
-      <br><strong>Home Page (Clean & Emotional Design)</strong>
+      <img src="registration.png" alt="Registration Page" width="100%"/>
+      <br><strong>Donor Registration Form</strong>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="images/login.png" alt="Login Page" width="100%"/>
-      <br><strong>Login Page</strong>
+      <img src="search.png" alt="Patient Search Results" width="100%"/>
+      <br><strong>Patient Search Results (with WhatsApp & Facebook Contact)</strong>
     </td>
     <td align="center">
-      <img src="images/profile.png" alt="Donor Profile" width="100%"/>
-      <br><strong>Donor Profile & Update</strong>
+      <img src="dashboard.png" alt="Admin Dashboard" width="100%"/>
+      <br><strong>Admin Dashboard Statistics</strong>
     </td>
   </tr>
 </table>
