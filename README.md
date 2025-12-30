@@ -28,7 +28,8 @@
 
 <table>
   <tr>
-    <td align="center"><img src="images/homepage" alt="Landing Page" width="100%"/><br><strong>Home Page</strong></td>
+    <td align="center"><img src="<img width="954" height="694" alt="homepage" src="https://github.com/user-attachments/assets/bf46f925-63be-4fa8-88c2-7afdd1f28d05" />
+" alt="Landing Page" width="100%"/><br><strong>Home Page</strong></td>
     <td align="center"><img src="https://via.placeholder.com/600x350/DC3545/FFFFFF?text=Donor+Registration" alt="Donor Registration" width="100%"/><br><strong>Donor Registration</strong></td>
   </tr>
   <tr>
