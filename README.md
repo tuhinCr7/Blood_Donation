@@ -28,7 +28,7 @@
 
 <table>
   <tr>
-    <td align="center"><img src="https://via.placeholder.com/600x350/FF6B6B/FFFFFF?text=Landing+Page" alt="Landing Page" width="100%"/><br><strong>Home Page</strong></td>
+    <td align="center"><img src="images/homepage" alt="Landing Page" width="100%"/><br><strong>Home Page</strong></td>
     <td align="center"><img src="https://via.placeholder.com/600x350/DC3545/FFFFFF?text=Donor+Registration" alt="Donor Registration" width="100%"/><br><strong>Donor Registration</strong></td>
   </tr>
   <tr>
