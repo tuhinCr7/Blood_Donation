@@ -27,46 +27,10 @@
 
 <### 📸 Project Screenshots
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="images/search.png" alt="Patient Search Results with Contact Buttons" width="100%"/>
-      <br><strong>Patient Search Results (WhatsApp & Facebook Contact)</strong>
-    </td>
-    <td align="center">
-      <img src="images/register.png" alt="Donor Registration Form" width="100%"/>
-      <br><strong>Donor Registration (with Never Donated option)</strong>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="images/dashboard.png" alt="Admin Dashboard" width="100%"/>
-      <br><strong>Admin Dashboard (Statistics & Blood Group Distribution)</strong>
-    </td>
-    <td align="center">
-      <img src="images/homepage.png" alt="Home / Landing Page" width="100%"/>
-      <br><strong>Home Page (Clean & Emotional Design)</strong>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="images/login.png" alt="Login Page" width="100%"/>
-      <br><strong>Login Page</strong>
-    </td>
-    <td align="center">
-      <img src="images/profile.png" alt="Donor Profile" width="100%"/>
-      <br><strong>Donor Profile & Update</strong>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="images/homepage.png" width="500"/>
+</p>
 
-> Make sure your screenshots are saved in the `images/` folder with these exact names:
-> - `search-results.png`
-> - `donor-register.png`
-> - `admin-dashboard.png`
-> - `home-page.png`
-> - `login.png`
-> - `donor-profile.png`
 
 <br>
 
