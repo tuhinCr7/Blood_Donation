@@ -92,3 +92,16 @@ INSERT INTO BloodGroups (Name) VALUES
 -- Admin user (username: admin, password: admin123)
 INSERT INTO Users (Username, PasswordHash, Role, Name, Email, Phone) 
 VALUES ('admin', 'JAvlGPq9JyTdtvBO6x2llnRI1+gxwIyPqCKAn3THIKk=', 'Admin', 'Administrator', 'admin@example.com', '9999999999');
+
+<h3>3 Run the application</h3>
+dotnet run
+<h3>4 Open in browser</h3>
+Visit the URL shown in the terminal (usually https://localhost:7294)
+
+<h3> Uses</h3>
+<p>
+  Register as Donor → Fill details (WhatsApp/Facebook optional)
+Register as Patient → Login → Search by blood group
+Click WhatsApp or Facebook button to contact donor directly
+Login as Admin to view statistics dashboard
+</p>
