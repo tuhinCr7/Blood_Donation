@@ -31,7 +31,7 @@
       <br><strong>Patient Search Results (WhatsApp & Facebook Contact)</strong>
     </td>
     <td align="center">
-      <img src="register.png" alt="Donor Registration Form" width="100%"/>
+      <img src="registration.png" alt="Donor Registration Form" width="100%"/>
       <br><strong>Donor Registration (with Never Donated option)</strong>
     </td>
   </tr>
