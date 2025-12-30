@@ -23,14 +23,6 @@
 
 <br>
 
-### 📸 Project Screenshots
-
-<### 📸 Project Screenshots
-
-<p align="center">
-  <img src="images/homepage.png" width="500"/>
-</p>
-
 
 <br>
 
