@@ -1,15 +1,14 @@
-
 <div align="center">
 
-# 🩸 C#project - Blood Donation Management System
+# 🩸 Life Saves - Blood Donation Management System
 
-**A modern ASP.NET Core MVC web application to connect blood donors with patients in need — saving lives one donation at a time.**
+**A modern ASP.NET Core MVC web application that connects blood donors with patients in need — saving lives one donation at a time.**
 
 <br>
 
-[![.NET 8](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/download)
-[![MySQL](https://img.shields.io/badge/Database-MySQL-brightgreen.svg)](https://www.mysql.com/)
-[![Bootstrap 5](https://img.shields.io/badge/UI-Bootstrap_5-purple.svg)](https://getbootstrap.com/)
+[![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=.net&logoColor=white)](https://dotnet.microsoft.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Bootstrap 5](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
 <br><br>
 
@@ -19,26 +18,53 @@
 - Real-time blood donor search by blood group
 - Direct contact via **WhatsApp** and **Facebook** buttons
 - Automatic eligibility check (4-month rule)
-- Beautiful Admin Dashboard with statistics
+- Beautiful Admin Dashboard with live statistics
 - Fully responsive & modern UI
 
 <br>
 
-### 📸 Screenshots
+### 📸 Project Screenshots
 
 <table>
   <tr>
-    <td align="center"><img src="<img width="954" height="694" alt="homepage" src="https://github.com/user-attachments/assets/bf46f925-63be-4fa8-88c2-7afdd1f28d05" />
-" alt="Landing Page" width="100%"/><br><strong>Home Page</strong></td>
-    <td align="center"><img src="https://via.placeholder.com/600x350/DC3545/FFFFFF?text=Donor+Registration" alt="Donor Registration" width="100%"/><br><strong>Donor Registration</strong></td>
+    <td align="center">
+      <img src="images/search-results.png" alt="Patient Search Results with Contact Buttons" width="100%"/>
+      <br><strong>Patient Search Results (WhatsApp & Facebook Contact)</strong>
+    </td>
+    <td align="center">
+      <img src="images/donor-register.png" alt="Donor Registration Form" width="100%"/>
+      <br><strong>Donor Registration (with Never Donated option)</strong>
+    </td>
   </tr>
   <tr>
-    <td align="center"><img src="https://via.placeholder.com/600x350/007BFF/FFFFFF?text=Patient+Search+Results" alt="Search Results" width="100%"/><br><strong>Patient Search Results</strong></td>
-    <td align="center"><img src="https://via.placeholder.com/600x350/28A745/FFFFFF?text=Admin+Dashboard" alt="Admin Dashboard" width="100%"/><br><strong>Admin Dashboard</strong></td>
+    <td align="center">
+      <img src="images/admin-dashboard.png" alt="Admin Dashboard" width="100%"/>
+      <br><strong>Admin Dashboard (Statistics & Blood Group Distribution)</strong>
+    </td>
+    <td align="center">
+      <img src="images/home-page.png" alt="Home / Landing Page" width="100%"/>
+      <br><strong>Home Page (Clean & Emotional Design)</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="images/login.png" alt="Login Page" width="100%"/>
+      <br><strong>Login Page</strong>
+    </td>
+    <td align="center">
+      <img src="images/donor-profile.png" alt="Donor Profile" width="100%"/>
+      <br><strong>Donor Profile & Update</strong>
+    </td>
   </tr>
 </table>
 
-> Replace the placeholder images above with your actual screenshots!
+> Make sure your screenshots are saved in the `images/` folder with these exact names:
+> - `search-results.png`
+> - `donor-register.png`
+> - `admin-dashboard.png`
+> - `home-page.png`
+> - `login.png`
+> - `donor-profile.png`
 
 <br>
 
@@ -46,15 +72,14 @@
 
 - **Backend**: ASP.NET Core MVC (.NET 8)
 - **Database**: MySQL + Entity Framework Core
-- **Frontend**: Bootstrap 5, Razor Views
+- **Frontend**: Bootstrap 5, Razor Views, CSS3
 - **Authentication**: Session-based roles (Admin, Donor, Patient)
 
 <br>
 
-### ⚙️ Setup
+### ⚙️ Setup Instructions
 
 ```bash
 git clone https://github.com/yourusername/CSproject.git
 cd CSproject
 dotnet run
-
