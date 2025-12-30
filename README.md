@@ -28,21 +28,21 @@
 <table>
   <tr>
     <td align="center">
-      <img src="images/search-results.png" alt="Patient Search Results with Contact Buttons" width="100%"/>
+      <img src="images/search.png" alt="Patient Search Results with Contact Buttons" width="100%"/>
       <br><strong>Patient Search Results (WhatsApp & Facebook Contact)</strong>
     </td>
     <td align="center">
-      <img src="images/donor-register.png" alt="Donor Registration Form" width="100%"/>
+      <img src="images/register.png" alt="Donor Registration Form" width="100%"/>
       <br><strong>Donor Registration (with Never Donated option)</strong>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="images/admin-dashboard.png" alt="Admin Dashboard" width="100%"/>
+      <img src="images/dashboard.png" alt="Admin Dashboard" width="100%"/>
       <br><strong>Admin Dashboard (Statistics & Blood Group Distribution)</strong>
     </td>
     <td align="center">
-      <img src="images/home-page.png" alt="Home / Landing Page" width="100%"/>
+      <img src="images/homepage.png" alt="Home / Landing Page" width="100%"/>
       <br><strong>Home Page (Clean & Emotional Design)</strong>
     </td>
   </tr>
@@ -52,7 +52,7 @@
       <br><strong>Login Page</strong>
     </td>
     <td align="center">
-      <img src="images/donor-profile.png" alt="Donor Profile" width="100%"/>
+      <img src="images/profile.png" alt="Donor Profile" width="100%"/>
       <br><strong>Donor Profile & Update</strong>
     </td>
   </tr>
