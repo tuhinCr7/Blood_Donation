@@ -6,39 +6,39 @@
     <!-- Header -->
     <div class="text-center mb-5">
         <h1 class="display-4 fw-bold text-white mb-3 text-shadow">Admin Dashboard</h1>
-        
+        <p class="lead text-light fs-3 opacity-90">Real-time Blood Donation System Statistics</p>
     </div>
 
     <!-- Summary Cards -->
     <div class="row g-4 mb-5">
         <div class="col-lg-6">
-            <div class="card bg-gradient-red text-white shadow-lg border-0 rounded-4 p-5 text-center hover-glow">
-                <div class="display-1 mb-4 opacity-80">Registered Donors</div>
+            <div class="card bg-gradient-red text-white shadow-lg border-0 rounded-5 p-5 text-center hover-glow">
+                <div class="display-1 mb-4 opacity-80">Drop of Blood</div>
                 <h2 class="display-2 fw-bold mb-3">@ViewBag.TotalDonors</h2>
-                
+                <p class="fs-3 mb-0 opacity-90">Registered Donors</p>
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="card bg-gradient-blue text-white shadow-lg border-0 rounded-4 p-5 text-center hover-glow">
-                <div class="display-1 mb-4 opacity-80">Registered Patients</div>
+            <div class="card bg-gradient-blue text-white shadow-lg border-0 rounded-5 p-5 text-center hover-glow">
+                <div class="display-1 mb-4 opacity-80">Search</div>
                 <h2 class="display-2 fw-bold mb-3">@ViewBag.TotalPatients</h2>
-               
+                <p class="fs-3 mb-0 opacity-90">Registered Patients</p>
             </div>
         </div>
     </div>
 
     <!-- Blood Group Distribution -->
-    <div class="card bg-dark text-white shadow-lg border-0 rounded-4 overflow-hidden">
-        <div class="card-header bg-gradient-red text-white text-center py-4 border-0">
-            <h3 class="display-6 mb-0">Blood Group Distribution</h3>
-            <p class="mb-0 opacity-80">Among all registered donors</p>
+    <div class="card bg-dark text-white shadow-xl border-0 rounded-5 overflow-hidden">
+        <div class="card-header bg-gradient-red text-white text-center py-5 border-0">
+            <h2 class="display-5 mb-2 fw-bold">Blood Group Distribution</h2>
+            <p class="mb-0 opacity-80 fs-5">Among all registered donors</p>
         </div>
         <div class="card-body p-5">
             @if (ViewBag.TotalDonors == 0)
             {
                 <div class="text-center py-5">
-                    <p class="fs-3 text-light opacity-70">No donors registered yet</p>
-                    <div class="display-1 opacity-30">Waiting</div>
+                    <div class="display-1 text-muted opacity-30 mb-4">Waiting</div>
+                    <p class="fs-4 text-light opacity-70">No donors registered yet</p>
                 </div>
             }
             else
@@ -53,9 +53,9 @@
                                     @stat.BloodGroup
                                 </div>
                                 <h4 class="fw-bold fs-3 mb-2">@stat.Count Donor@(stat.Count == 1 ? "" : "s")</h4>
-                                <div class="progress mt-4" style="height: 40px; background: rgba(255,255,255,0.1);">
+                                <div class="progress mt-4" style="height: 40px; background: rgba(255,255,255,0.1); border-radius: 20px;">
                                     <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" 
-                                         style="width: @percentage%">
+                                         style="width: @percentage%; border-radius: 20px;">
                                         <span class="fw-bold fs-4">@percentage%</span>
                                     </div>
                                 </div>
@@ -67,12 +67,23 @@
         </div>
     </div>
 
-   
+    <!-- Management Buttons -->
+    <div class="text-center mt-5">
+        <a href="/Admin/ManageDonors" class="btn btn-danger btn-lg px-5 rounded-pill shadow-lg hover-glow me-3">
+            Manage Donors (View & Delete)
+        </a>
+        <a href="/Admin/ManagePatients" class="btn btn-primary btn-lg px-5 rounded-pill shadow-lg hover-glow me-3">
+            Manage Patients (View & Delete)
+        </a>
+        <a href="/" class="btn btn-outline-light btn-lg px-5 rounded-pill shadow">
+            Back to Home
+        </a>
+    </div>
 </div>
 
 <style>
     body {
-        background: #121212;
+        background: #0f0f0f;
         color: #e0e0e0;
     }
 
@@ -81,17 +92,17 @@
     }
 
     .bg-gradient-blue {
-        background: linear-gradient(135deg, #343a40, #495057);
+        background: linear-gradient(135deg, #007bff, #6610f2);
     }
 
     .bg-glass {
         background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .text-shadow {
-        text-shadow: 0 4px 8px rgba(0,0,0,0.6);
+        text-shadow: 0 4px 10px rgba(0,0,0,0.8);
     }
 
     .hover-glow {
@@ -99,17 +110,18 @@
     }
 
     .hover-glow:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(220, 53, 69, 0.4);
+        transform: translateY(-12px);
+        box-shadow: 0 25px 50px rgba(220, 53, 69, 0.5);
     }
 
     .progress-bar-animated {
-        animation: progress-stripes 3s linear infinite;
+        animation: progress-animation 3s linear infinite;
+        background-size: 40px 40px;
     }
 
-    @@keyframes progress-stripes {
-        0% { background-position: 40px 0; }
-        100% { background-position: 0 0; }
+    @@keyframes progress-animation {
+        0% { background-position: 0 0; }
+        100% { background-position: 40px 0; }
     }
 
     .card {
@@ -118,5 +130,9 @@
 
     .card:hover {
         transform: translateY(-8px);
+    }
+
+    .shadow-xl {
+        box-shadow: 0 30px 60px rgba(0,0,0,0.6);
     }
 </style>

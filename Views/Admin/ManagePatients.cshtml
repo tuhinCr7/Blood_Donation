@@ -1,0 +1,53 @@
+@model List<CSproject.Models.PatientViewModel>
+
+@{
+    ViewData["Title"] = "Manage Patients";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center display-5 fw-bold text-primary mb-5">Manage Registered Patients</h1>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success mb-4 text-center">@TempData["Success"]</div>
+    }
+
+    @if (!Model.Any())
+    {
+        <p class="text-center fs-4 text-muted">No patients registered yet.</p>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var patient in Model)
+                    {
+                        <tr>
+                            <td><strong>@patient.Name</strong></td>
+                            <td>@patient.Email</td>
+                            <td>@patient.Phone</td>
+                            <td>
+                                <a href="/Admin/DeletePatient/@patient.Id" class="btn btn-danger btn-sm rounded-pill">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    <div class="text-center mt-5">
+        <a href="/Admin/Dashboard" class="btn btn-outline-primary btn-lg px-5 rounded-pill shadow hover-glow">
+            ← Back to Dashboard
+        </a>
+    </div>
+</div>
