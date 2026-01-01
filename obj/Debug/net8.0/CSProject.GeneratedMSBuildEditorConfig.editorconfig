@@ -34,8 +34,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/tuhinalambijoy/Documents/CSProject/Views/Admin/DeleteDonor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRGVsZXRlRG9ub3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tuhinalambijoy/Documents/CSProject/Views/Admin/DeletePatient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRGVsZXRlUGF0aWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/tuhinalambijoy/Documents/CSProject/Views/Admin/Donors.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRG9ub3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tuhinalambijoy/Documents/CSProject/Views/Admin/ManageDonors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTWFuYWdlRG9ub3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tuhinalambijoy/Documents/CSProject/Views/Admin/ManagePatients.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTWFuYWdlUGF0aWVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/tuhinalambijoy/Documents/CSProject/Views/Admin/SearchLogs.cshtml]
